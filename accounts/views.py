@@ -29,4 +29,4 @@ class UserView(viewsets.ModelViewSet):
         user.save()
         _message = "success"
         _status = status.HTTP_200_OK
-        return Response(serializer.data, {"message": _message})
+        return Response(serializer.data, {"message": _message, "status_code":_status})
