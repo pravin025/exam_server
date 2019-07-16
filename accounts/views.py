@@ -1,5 +1,5 @@
 # Create your views here.
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 from rest_framework.response import Response
 
 from .serializers import UserSerializer
@@ -28,5 +28,5 @@ class UserView(viewsets.ModelViewSet):
         user.address = payload.get("address")
         user.save()
         _message = "success"
-        return Response(serializer.data, {"message":_message})
-
+        _status = status.HTTP_200_OK
+        return Response(serializer.data, {"message": _message})
