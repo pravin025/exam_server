@@ -27,5 +27,6 @@ class UserView(viewsets.ModelViewSet):
         user.phone = payload.get("phone")
         user.address = payload.get("address")
         user.save()
+        _message = "success"
+        return Response(serializer.data, {"message":_message})
 
-        return Response(serializer.data)
