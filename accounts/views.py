@@ -1,13 +1,9 @@
-from django.shortcuts import render
-
 # Create your views here.
 from rest_framework import viewsets
 from rest_framework.response import Response
 
-from .serializers import ProfessorProfile, StudentProfile, UserSerializer
+from .serializers import UserSerializer
 from django.contrib.auth.models import User
-
-from .models import StudentProfile, ProfessorProfile
 
 
 class UserView(viewsets.ModelViewSet):
