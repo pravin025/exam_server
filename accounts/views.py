@@ -31,3 +31,8 @@ class UserView(viewsets.ModelViewSet):
         _message = "success"
         status_code = status.HTTP_200_OK
         return Response(serializer.data, {"message": _message, "status_code": status_code})
+
+    def retrieve(self, request, pk):
+        user = User.objects.get(id=pk)
+        serializer = UserSerializer(user)
+        return Response(serializer.data)
