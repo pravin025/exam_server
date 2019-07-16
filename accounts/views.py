@@ -38,6 +38,6 @@ class UserView(viewsets.ModelViewSet):
         return Response(serializer.data)
 
     def delete(self, request, pk)
-        user = user.objects.get(id=pk)
+        user = User.objects.get(id=pk)
         user.delete()
         return Response({"data":"user Deleted Successfully"})
