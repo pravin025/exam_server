@@ -41,3 +41,7 @@ class UserView(viewsets.ModelViewSet):
         user = User.objects.get(id=pk)
         user.delete()
         return Response({"data":"user Deleted Successfully"})
+
+    
+def test():
+    pass
