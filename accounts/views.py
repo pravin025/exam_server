@@ -43,5 +43,6 @@ class UserView(viewsets.ModelViewSet):
         return Response({"data":"user Deleted Successfully"})
 
     
+@api_view(["POST","GET"])
 def test():
     pass
